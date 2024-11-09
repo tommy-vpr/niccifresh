@@ -1,0 +1,346 @@
+.products-container {
+  margin-top: 10rem;
+}
+
+.banner-bg {
+  width: 100%;
+  right: 50%;
+  top: 50%;
+  transform: translate(20%, -50%);
+  position: absolute;
+  opacity: 0.35;
+}
+
+.products-banner {
+  border-radius: 15px;
+  max-width: 1600px;
+  width: 80%;
+  height: 35vh;
+  margin: auto;
+  padding: 3rem;
+  background: linear-gradient(90deg, #9ebd13 0%, #008552 100%);
+  display: flex;
+  position: relative;
+  overflow: hidden;
+}
+
+.products-banner--left {
+  width: 50%;
+  display: flex;
+  position: relative;
+  z-index: 1;
+}
+
+.product-banner-img-container {
+  position: absolute;
+  top: 0;
+  left: 0;
+  transform-origin: center;
+  width: 50%;
+  height: 100%;
+}
+
+.product-banner-img-container img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+}
+
+.products-banner--right {
+  width: 50%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding-left: 3rem;
+  text-align: center;
+  z-index: 1;
+}
+
+.products-banner--right img {
+  width: 50%;
+  margin: 0 auto;
+}
+
+.products-banner--right h3 {
+  font-size: 2rem;
+  color: #fff;
+  font-family: "Poppins";
+  font-weight: bold;
+  margin-top: 1rem;
+}
+
+/* Animate the second container with a 50% translateX */
+.products-banner--left .product-banner-img-container:nth-child(2) {
+  animation: translateRotate50 2s ease-in-out forwards;
+  animation-delay: 0.15s; /* Adjust delay to stagger the animation */
+}
+
+/* Animate the third container with a 100% translateX */
+.products-banner--left .product-banner-img-container:nth-child(1) {
+  animation: translateRotate100 2s ease-in-out forwards;
+  animation-delay: 0.3s;
+}
+
+/* Keyframes for 50% translation */
+@keyframes translateRotate50 {
+  from {
+    transform: translateX(0) rotate(0deg);
+  }
+  to {
+    transform: translateX(50%) rotate(360deg);
+  }
+}
+
+/* Keyframes for 100% translation */
+@keyframes translateRotate100 {
+  from {
+    transform: translateX(0) rotate(0deg);
+  }
+  to {
+    transform: translateX(100%) rotate(360deg);
+  }
+}
+
+.product-list {
+  max-width: 1600px;
+  width: 80%;
+  margin: 3rem auto;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 4rem;
+}
+
+.product {
+  display: flex;
+  width: 100%;
+  border-radius: 15px;
+}
+
+.product-img-container {
+  width: 60%;
+  cursor: pointer;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.product-img-container:hover img {
+  transform: scale(1.05) rotate(-10deg) translateY(-3px);
+}
+
+.product-img-container img {
+  width: 90%;
+  object-fit: contain;
+  transition: all 0.3s ease;
+}
+
+.product-desc {
+  width: 40%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 20px;
+  padding: 10px;
+}
+
+/* .product-desc button {
+  background: #101010;
+  padding: 13px 30px;
+  color: #fff;
+  border: none;
+  border-radius: 150px;
+  width: fit-content;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.product-desc button:hover {
+  opacity: 0.9;
+  transform: translateY(-3px);
+} */
+
+/* CSS */
+.button-74 {
+  background-color: #fff;
+  border: 2px solid #101010;
+  border-radius: 30px;
+  box-shadow: #101010 4px 4px 0 0;
+  color: #101010;
+  cursor: pointer;
+  display: inline-block;
+  font-weight: 600;
+  font-size: 18px;
+  padding: 0 18px;
+  line-height: 50px;
+  text-align: center;
+  text-decoration: none;
+  user-select: none;
+  -webkit-user-select: none;
+  touch-action: manipulation;
+  transition: all 0.3s ease-in-out;
+}
+
+.button-74:hover {
+  background-color: #101010;
+  color: #fff;
+  box-shadow: none;
+}
+
+.button-74:active {
+  box-shadow: #422800 2px 2px 0 0;
+  transform: translate(2px, 2px);
+}
+
+@media (min-width: 768px) {
+  .button-74 {
+    min-width: 120px;
+    padding: 0 25px;
+  }
+}
+
+.button-82-pushable:hover {
+  filter: brightness(110%);
+  -webkit-filter: brightness(110%);
+}
+
+.button-82-pushable:hover .button-82-front {
+  transform: translateY(-6px);
+  transition: transform 250ms cubic-bezier(0.3, 0.7, 0.4, 1.5);
+}
+
+.button-82-pushable:active .button-82-front {
+  transform: translateY(-2px);
+  transition: transform 34ms;
+}
+
+.button-82-pushable:hover .button-82-shadow {
+  transform: translateY(4px);
+  transition: transform 250ms cubic-bezier(0.3, 0.7, 0.4, 1.5);
+}
+
+.button-82-pushable:active .button-82-shadow {
+  transform: translateY(1px);
+  transition: transform 34ms;
+}
+
+.button-82-pushable:focus:not(:focus-visible) {
+  outline: none;
+}
+
+.product-desc h3 {
+  font-size: 32px;
+  font-weight: bold;
+}
+
+.product-desc p {
+  line-height: 1.5;
+}
+
+.product-item-title {
+  font-size: 24px;
+  color: #333;
+  font-weight: bold;
+  font-family: "Poppins";
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.product-item-title span:nth-child(2) {
+  font-weight: normal;
+  font-size: 16px;
+  line-height: 1;
+  padding: 0;
+  margin: 0;
+}
+
+.product-item {
+  background: lightgreen;
+  display: flex;
+}
+
+.product-item-cta {
+  background: #101010;
+  padding: 15px 30px;
+  color: #fff;
+  border: none;
+  border-radius: 150px;
+  margin-top: 1.5rem;
+}
+
+.footer {
+  background: #101010;
+  padding: 5rem 5rem 0;
+}
+
+.footer-container {
+  color: #fff;
+  margin: auto;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.footer-container ul {
+  display: flex;
+  gap: 4rem;
+}
+
+.footer-container ul li {
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+.footer-container ul li:hover {
+  color: #ddd;
+}
+
+.footer-form input {
+  padding: 1rem;
+  border: none;
+  margin-right: 0;
+  width: 400px;
+}
+
+.footer-form button {
+  padding: 1rem 2rem;
+  border: none;
+  margin-left: 0;
+  background: #008552;
+  color: #fff;
+}
+.footer-bottom {
+  padding: 1.5rem 0;
+  border-top: 1px solid #333;
+  color: #fff;
+  font-size: 13px;
+  text-align: center;
+  color: #666;
+}
+
+.icons {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 2rem;
+  padding: 5rem 0 2rem;
+}
+
+.icon {
+  width: 80px;
+  height: 80px;
+  background: #333;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 50%;
+  transition: all 0.3s ease-in-out;
+  cursor: pointer;
+}
+.icon:hover {
+  background: #666;
+}
+.icon img {
+  height: 50%;
+  object-fit: cover;
+  object-position: center;
+}

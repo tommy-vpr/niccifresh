@@ -120,144 +120,71 @@ blockquote:before,
 blockquote:after,
 q:before,
 q:after {
-  content: '';
+  content: "";
   content: none;
 }
 table {
   border-collapse: collapse;
   border-spacing: 0;
 }
-body {
-  font-family: 'Roboto';
-}
-.video-container {
-  height: 50vh;
-  width: 100%;
-  overflow: hidden;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  position: relative;
-  color: #fff;
-}
-.video-container h3 {
-  font-weight: bold;
-  font-size: 3rem;
-  margin-bottom: 1.5rem;
-}
-.video-container h3::after {
-  content: '';
-  bottom: 0;
-  left: 0;
-  display: block;
-  height: 0.4rem;
-  width: 120px;
-  background: gold;
-}
-.video-container p:first-of-type {
-  font-weight: bold;
-  font-size: 1.6rem;
-  margin-bottom: 0.6rem;
-}
-.limited-edition-cta {
-  text-decoration: none;
-  padding: 0.8rem 2rem;
-  background: gold;
-  color: #01070e;
-  border-radius: 150px;
-  display: inline-block;
-  margin-top: 1rem;
-}
-.video-container p {
-  line-height: 1.3;
-}
-.video-container-info {
-  position: absolute;
-  bottom: 5%;
-  left: 5%;
-  z-index: 10;
-  width: 400px;
-  font-weight: normal;
-}
-
-.video-container::after {
-  content: '';
-  width: 50%; /* You can adjust this percentage based on how much gradient you want */
-  height: 100%;
-  background-image: linear-gradient(to right, transparent, #000 30%);
-  top: 0;
-  right: 0;
-  position: absolute;
-  z-index: 1; /* Ensures the gradient is above the video */
-}
-
-.video-container video {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  object-position: center;
-  position: absolute;
-  top: 0;
-  left: 0;
-  z-index: 0; /* Ensures the video is below the gradient */
-}
-
-.rough-edges {
-  width: 200px;
-  height: 200px;
-  background-color: lightblue;
-  filter: drop-shadow(5px 5px 0 #333) drop-shadow(-5px -5px 0 #333);
-}
-
-.products {
-  background: #efead5;
-  min-height: 100vh;
-  padding: 3rem;
-  display: grid;
-  grid-template-columns: repeat(4, 1fr);
-  gap: 2rem;
-}
-.product-item {
-  display: flex;
-  flex-direction: column;
-  gap: 2rem;
-}
-.doodle-shop-btn svg {
-  width: 100%;
-  height: auto;
-  display: block; /* Prevents extra space below SVG */
-}
-.doodle-square svg {
-  width: 40%;
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
 
 body {
-  font-family: 'Poppins', sans-serif;
+  font-family: "Poppins", sans-serif;
 }
 
 header {
-  position: absolute;
   width: 100%;
+  padding: 10px 20px;
+  position: fixed;
+  top: 0;
+  z-index: 1;
+  color: #fff;
+  border-bottom: 1px solid rgba(250, 250, 250, 0.3);
+  background: rgba(255, 255, 255, 0.25);
+  box-shadow: 0 6px 24px 0 rgba(31, 38, 135, 0.2);
+  backdrop-filter: blur(4px);
+  -webkit-backdrop-filter: blur(4px);
   z-index: 100;
-  border-bottom: 1px solid #fff4;
 }
 
-header ul {
-  padding: 0;
-  margin: 0;
+.container {
   display: flex;
-  justify-content: center;
+  justify-content: space-between;
   align-items: center;
-  width: 100%;
-  list-style: none;
 }
-header li {
-  padding: 30px 40px;
+
+.nav ul {
+  list-style: none;
+  display: flex;
+  gap: 3rem;
+}
+
+.nav ul li a {
+  text-decoration: none;
+  color: #333;
+  position: relative;
+  padding: 5px 0;
   color: #fff;
 }
-header li.active,
-header li:hover {
-  border-bottom: 2px solid #fff;
+
+.nav ul li a::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: -15px;
+  width: 0;
+  height: 2px;
+  background-color: #fff;
+  transition: width 0.3s ease;
+}
+
+.nav ul li a:hover::after {
+  width: 100%;
 }
 
 .slider {
@@ -292,7 +219,7 @@ header li:hover {
   color: #fff;
   font-size: 6rem;
   width: 40%;
-  font-family: 'Pacifico', cursive;
+  font-family: "Poppins";
   text-shadow: 3px 5px 0px #478860;
   line-height: 0.9em;
   transform: rotate(-5deg);
@@ -302,69 +229,74 @@ header li:hover {
   bottom: 0%;
   left: 50%;
   --rotate: 0deg;
-  transform: translate(-50%, 50%) rotate(var(--rotate));
-  width: 1300px;
-  height: 1300px;
+  transform: translate(-50%, 40%) rotate(var(--rotate));
+  width: 1400px;
+  height: 1400px;
   border-radius: 50%;
   transition: transform 0.5s ease-in-out;
-  outline: 3px dashed rgba(36, 35, 35, 0.333);
-  outline-offset: -100px;
+  /* outline: 3px dashed rgba(36, 35, 35, 0.333);
+  outline-offset: -200px; */
 }
 .images .item {
   position: absolute;
   width: 100%;
   height: 100%;
   text-align: center;
-  rotate: calc(60deg * var(--i));
+  rotate: calc(72deg * var(--i));
 }
 
 .images .item img {
-  height: 300px;
+  height: 400px;
   transition: all 0.5s ease-in-out;
 }
 
 .content {
   color: #fff;
   position: absolute;
-  top: 15%;
-  left: 0;
-  width: 100%;
+  bottom: 80px;
+  left: 50%;
   line-height: 1.5;
   font-weight: 300;
-  color: #333;
+  /* color: #333; */
+  transform: translate(-50%, 0%);
+  /* background: rgba(0, 0, 0, 0.15);
+  padding: 15px;
+  border-radius: 15px; */
 }
 .content h1 {
-  color: #333;
   font-size: 2.4rem;
+  margin-bottom: 2rem;
+  /* color: #fff; */
 }
 .content button {
   margin-top: 30px;
   padding: 12px 25px;
   border-radius: 180px;
-  border: 1px solid #fff;
+  border: 1px solid #101010;
   background-color: transparent;
-  color: #fff;
+  color: #101010;
   font-size: 16px;
   transition: all 0.3s ease-in-out;
   cursor: pointer;
 }
 .content button:hover {
-  background: #fff;
-  color: #333;
+  background: #101010;
+  color: #fff;
 }
 .content .item {
   display: none;
-  width: 90%;
+  width: 100%;
   margin: auto;
 }
 .content .item.active {
-  display: block;
   display: flex;
-  justify-content: space-between;
+  flex-direction: column;
+  justify-content: center;
 }
 .flavor {
-  color: gold;
-  font-family: 'Permanent Marker';
+  color: #333;
+  font-family: "Poppins";
+  font-weight: 500;
   font-size: 26px;
 }
 @keyframes showContent {
@@ -376,25 +308,23 @@ header li:hover {
     opacity: 1;
   }
 }
-.content .item.active h1 {
-  font-size: 4rem;
+.item-title {
+  font-size: 3.2rem;
   font-weight: bold;
-  font-family: 'Permanent Marker';
+  font-family: "Poppins";
   opacity: 0;
   animation: showContent 0.5s ease-in-out 1 forwards;
   line-height: 1;
-  width: 50%;
-  color: #fff;
-  text-shadow: 1px 1px 5px rgba(0, 0, 0, 0.25);
+  /* text-shadow: 1px 1px 5px rgba(0, 0, 0, 0.25); */
 }
 .content .item.active .des {
   display: flex;
   flex-direction: column;
   opacity: 0;
   animation: showContent 0.5s 0.3s ease-in-out 1 forwards;
-  width: 30%;
   font-size: 16px;
-  color: #fff;
+  color: #333;
+  width: 400px;
 }
 .content .item.active button {
   width: fit-content;
@@ -409,10 +339,9 @@ header li:hover {
   top: 50%;
   left: 5%;
   font-size: 85px;
-  font-family: cursive;
+  font-family: "Poppins";
   background-color: transparent;
   color: #ffffff;
-  font-weight: bold;
   opacity: 0.85;
   cursor: pointer;
   transition: all 0.3 ease-in-out;
@@ -435,12 +364,13 @@ header li:hover {
   z-index: -1;
   background: radial-gradient(
     circle farthest-side at center bottom,
-    #f7fa30,
-    #09963f
+    #fcd3b7,
+    #f17c39
   );
   background-repeat: no-repeat;
   background-position: center bottom;
   overflow: hidden;
+  transition: background 1s ease-in-out;
 }
 
 .bg img {
@@ -448,7 +378,44 @@ header li:hover {
   bottom: -10px;
   left: 50%;
   transform: translateX(-50%);
-  width: 100%;
+  /* width: 100%; */
+  height: 100%;
   object-fit: cover;
-  opacity: 0.38;
+  opacity: 0.6;
+}
+
+@media screen and (max-width: 600px) {
+  .bg img {
+    height: 92%;
+  }
+
+  #prev,
+  #next {
+    color: #ffffff;
+    text-shadow: 1px 1px 5px rgba(0, 0, 0, 0.25);
+  }
+
+  .images .item img {
+    width: 350px;
+    height: 350px;
+  }
+
+  .nav ul {
+    gap: 1rem;
+  }
+
+  .nav ul li {
+    font-size: 14px;
+  }
+}
+
+section {
+  width: 100%;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 3rem;
+  text-transform: uppercase;
+  background: lightgray;
 }
